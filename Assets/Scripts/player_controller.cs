@@ -19,13 +19,25 @@ public class player_controller : MonoBehaviour
     private Vector2 direction;
     private bool startJump;
     private int jumpsLeft; // Current number of jumps remaining
+    private SpriteRenderer spr;
+    private Animator anim;
+    private bool doorUsable; // If standing in door
+    private Vector3 targetDoorPos; // Position of the targeted door
+
+    private enum state_type {idle, moving, jumping, sliding}
+    state_type cur_state;
 
     void Start()
     {
         facingRight = true;
         isJumping = false;
         rb = GetComponent<Rigidbody2D>();
+        spr = GetComponent<SpriteRenderer>();
         jumpsLeft = numJumps;
+        cur_state = state_type.idle;
+        anim = GetComponent<Animator>();
+        doorUsable = false;
+        targetDoorPos = Vector3.zero;
     }
 
     void Update()
@@ -33,6 +45,10 @@ public class player_controller : MonoBehaviour
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0.0f);
         if (direction.magnitude > 0.0f)
         {
+            if (!isJumping && !(cur_state == state_type.sliding))
+            {
+                cur_state = state_type.moving;
+            }
             if (direction.x > 0.0f)
             {
                 facingRight = true;
@@ -45,6 +61,29 @@ public class player_controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             startJump = true;
+            cur_state = state_type.jumping;
+        }
+        switch (cur_state)
+        {
+            case (state_type.idle):
+                    anim.SetInteger("state", 0);
+                    break;
+            case (state_type.moving):
+                    anim.SetInteger("state", 1);
+                    break;                
+            case (state_type.jumping):
+                    anim.SetInteger("state", 2);
+                    break;                
+            case (state_type.sliding):
+                    anim.SetInteger("state", 3);
+                    break;                
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (doorUsable)
+            {
+                rb.MovePosition(targetDoorPos);
+            }
         }
     }
 
@@ -55,6 +94,7 @@ public class player_controller : MonoBehaviour
         {
             if (facingRight == true)
             {
+                spr.flipX = false;
                 if(rb.velocity.x < maxSpeed) // Prevent player from going too fast
                 {
                     rb.AddForce(Vector2.right * speed);
@@ -62,7 +102,8 @@ public class player_controller : MonoBehaviour
             }
             else
             {
-                if(rb.velocity.x > -1* maxSpeed) // Prevent player from going too fast
+                spr.flipX = true;
+                if (rb.velocity.x > -1* maxSpeed) // Prevent player from going too fast
                 {
                     rb.AddForce(Vector2.left * speed);
                 }
@@ -118,9 +159,31 @@ public class player_controller : MonoBehaviour
         if(collision.gameObject.tag == "Ceiling")
         {
             jumpsLeft = numJumps; // Reset number of jumps
+            cur_state = state_type.sliding;
         }else if(collision.gameObject.tag == "Floor")
         {
             jumpsLeft = numJumps; // Reset number of jumps
+            cur_state = state_type.idle;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Door")
+        {
+            doorUsable = true;            
+        }        
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Door")
+        {
+            doorUsable = false;            
+        }
+    }
+
+    void getTargetDoor(Vector3 pos)
+    {
+        targetDoorPos = pos;
     }
 }
