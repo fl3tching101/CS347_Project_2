@@ -60,10 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scoreController.cs" />
     <Compile Include="Assets\Scripts\camera_controller.cs" />
     <Compile Include="Assets\Scripts\doorController.cs" />
     <Compile Include="Assets\Scripts\lava_controller.cs" />
+    <Compile Include="Assets\Scripts\menuController.cs" />
     <Compile Include="Assets\Scripts\player_controller.cs" />
+    <Compile Include="Assets\Scripts\quitGame.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Seth/Documents/CS 347 Game Design/Project 2/Unity Project/CS347_Project_2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

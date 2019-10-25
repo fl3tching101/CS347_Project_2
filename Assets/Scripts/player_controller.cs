@@ -23,6 +23,7 @@ public class player_controller : MonoBehaviour
     private Animator anim;
     private bool doorUsable; // If standing in door
     private Vector3 targetDoorPos; // Position of the targeted door
+    private bool isPaused; // Used to pause the game
 
     private enum state_type {idle, moving, jumping, sliding}
     state_type cur_state;
@@ -38,6 +39,7 @@ public class player_controller : MonoBehaviour
         anim = GetComponent<Animator>();
         doorUsable = false;
         targetDoorPos = Vector3.zero;
+        isPaused = false;
     }
 
     void Update()
@@ -206,5 +208,15 @@ public class player_controller : MonoBehaviour
     void getTargetDoor(Vector3 pos)
     {
         targetDoorPos = pos;
+    }
+
+    void pauseGame()
+    {
+        isPaused = true;
+    }
+
+    void playGame()
+    {
+        isPaused = false;
     }
 }
