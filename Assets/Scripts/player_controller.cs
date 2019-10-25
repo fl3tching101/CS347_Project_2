@@ -44,11 +44,7 @@ public class player_controller : MonoBehaviour
     {
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0.0f);
         if (direction.magnitude > 0.0f)
-        {
-            if (!isJumping && !(cur_state == state_type.sliding))
-            {
-                cur_state = state_type.moving;
-            }
+        {            
             if (direction.x > 0.0f)
             {
                 facingRight = true;
@@ -84,6 +80,14 @@ public class player_controller : MonoBehaviour
             {
                 rb.MovePosition(targetDoorPos);
             }
+        }
+        if (rb.velocity.magnitude > 0.1f && !(isJumping) && !(cur_state == state_type.sliding))
+        {
+            cur_state = state_type.moving;
+        }
+        else if(rb.velocity.magnitude < 0.1f && !(isJumping) && !(cur_state == state_type.sliding))
+        {
+            cur_state = state_type.idle;
         }
     }
 
@@ -121,6 +125,7 @@ public class player_controller : MonoBehaviour
         if(jumpsLeft > 0)
         {
             rb.AddForce(Vector2.up * jumpForce);
+            isJumping = true;
             jumpsLeft--;
         }
     }
@@ -160,10 +165,26 @@ public class player_controller : MonoBehaviour
         {
             jumpsLeft = numJumps; // Reset number of jumps
             cur_state = state_type.sliding;
+            isJumping = false;
         }else if(collision.gameObject.tag == "Floor")
         {
             jumpsLeft = numJumps; // Reset number of jumps
             cur_state = state_type.idle;
+            isJumping = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ceiling")
+        {            
+            cur_state = state_type.jumping;
+            isJumping = true;
+        }
+        else if (collision.gameObject.tag == "Floor")
+        {
+            cur_state = state_type.jumping;
+            isJumping = true;
         }
     }
 
