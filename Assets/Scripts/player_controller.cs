@@ -235,9 +235,6 @@ public class player_controller : MonoBehaviour
     void endOfLevel()
     {
         isPaused = true;
-        int score = GetComponent<scoreController>().calculateScore();
-        GameObject.Find("Player/UI/levelComplete").SetActive(true); // Display the level complete UI text
-        scoreText = GameObject.Find("Player/UI/levelComplete/scoreText").GetComponent<Text>();
-        scoreText.text = "Your Score: " + score;
+        GameObject.Find("Player/UI/playerNameUI").SetActive(true);                
     }
 }

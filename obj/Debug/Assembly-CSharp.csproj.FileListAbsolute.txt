@@ -280,3 +280,7 @@ I:\Project 2\Unity Project\Project_2\obj\Debug\Assembly-CSharp.csproj.CoreCompil
 I:\Project 2\Unity Project\Project_2\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 I:\Project 2\Unity Project\Project_2\obj\Debug\Assembly-CSharp.dll
 I:\Project 2\Unity Project\Project_2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Seth\Documents\CS 347 Game Design\Project 2\Unity Project\CS347_Project_2\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\Seth\Documents\CS 347 Game Design\Project 2\Unity Project\CS347_Project_2\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Seth\Documents\CS 347 Game Design\Project 2\Unity Project\CS347_Project_2\obj\Debug\Assembly-CSharp.dll
+C:\Users\Seth\Documents\CS 347 Game Design\Project 2\Unity Project\CS347_Project_2\obj\Debug\Assembly-CSharp.pdb

@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\camera_controller.cs" />
+    <Compile Include="Assets\Scripts\dataController.cs" />
     <Compile Include="Assets\Scripts\doorController.cs" />
     <Compile Include="Assets\Scripts\endLevel.cs" />
     <Compile Include="Assets\Scripts\lava_controller.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scripts\player_controller.cs" />
     <Compile Include="Assets\Scripts\quitGame.cs" />
     <Compile Include="Assets\Scripts\scoreController.cs" />
+    <Compile Include="Assets\Scripts\submitPlayerName.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Seth/Documents/CS 347 Game Design/Project 2/Unity Project/CS347_Project_2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
