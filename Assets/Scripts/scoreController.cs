@@ -36,13 +36,14 @@ public class scoreController : MonoBehaviour
         time_run = false;
     }
 
-    int calculateScore()
+    public int calculateScore()
     {
+        stopTimer();
         int score = 0;
         int health = GameObject.FindGameObjectWithTag("Player").GetComponent<player_controller>().health;
         if(timer < minTime) // Make sure time doesn't go negative when minTime is subtracted off their time
         {
-            minTime = 0;
+            minTime = (int)timer;
         }
         int time_score_func = failTime - ((int)timer - minTime);
         if(time_score_func < 0) // If they are over failTime, then just give them a time bonus of 0

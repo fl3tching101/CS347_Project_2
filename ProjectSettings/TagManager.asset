@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - Door
   - Menu
+  - levelComplete
   layers:
   - Default
   - TransparentFX
