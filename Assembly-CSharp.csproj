@@ -85,6 +85,9 @@
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Seth/Documents/CS 347 Game Design/Project 2/Unity Project/CS347_Project_2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/Seth/Documents/CS 347 Game Design/Project 2/Unity Project/CS347_Project_2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -93,6 +96,9 @@
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/Seth/Documents/CS 347 Game Design/Project 2/Unity Project/CS347_Project_2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
       <HintPath>C:/Users/Seth/Documents/CS 347 Game Design/Project 2/Unity Project/CS347_Project_2/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
@@ -120,6 +126,12 @@
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/Seth/Documents/CS 347 Game Design/Project 2/Unity Project/CS347_Project_2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>C:/Users/Seth/Documents/CS 347 Game Design/Project 2/Unity Project/CS347_Project_2/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
