@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\endLevel.cs" />
     <Compile Include="Assets\Scripts\lava_controller.cs" />
     <Compile Include="Assets\Scripts\menuController.cs" />
+    <Compile Include="Assets\Scripts\nextLevelButtonController.cs" />
     <Compile Include="Assets\Scripts\player_controller.cs" />
     <Compile Include="Assets\Scripts\quitGame.cs" />
     <Compile Include="Assets\Scripts\scoreController.cs" />
