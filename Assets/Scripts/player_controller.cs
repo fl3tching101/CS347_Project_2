@@ -24,6 +24,7 @@ public class player_controller : MonoBehaviour
     private bool doorUsable; // If standing in door
     private Vector3 targetDoorPos; // Position of the targeted door
     private bool isPaused; // Used to pause the game
+    private Text scoreText; // Text that the final score is saved into
 
     private enum state_type {idle, moving, jumping, sliding}
     state_type cur_state;
@@ -44,81 +45,92 @@ public class player_controller : MonoBehaviour
 
     void Update()
     {
-        direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0.0f);
-        if (direction.magnitude > 0.0f)
-        {            
-            if (direction.x > 0.0f)
-            {
-                facingRight = true;
-            }
-            else
-            {
-                facingRight = false;
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isPaused != true)
         {
-            startJump = true;
-            cur_state = state_type.jumping;
-        }
-        switch (cur_state)
-        {
-            case (state_type.idle):
+            Time.timeScale = 1.0f;
+            direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0.0f);
+            if (direction.magnitude > 0.0f)
+            {
+                if (direction.x > 0.0f)
+                {
+                    facingRight = true;
+                }
+                else
+                {
+                    facingRight = false;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                startJump = true;
+                cur_state = state_type.jumping;
+            }
+            switch (cur_state)
+            {
+                case (state_type.idle):
                     anim.SetInteger("state", 0);
                     break;
-            case (state_type.moving):
+                case (state_type.moving):
                     anim.SetInteger("state", 1);
-                    break;                
-            case (state_type.jumping):
+                    break;
+                case (state_type.jumping):
                     anim.SetInteger("state", 2);
-                    break;                
-            case (state_type.sliding):
+                    break;
+                case (state_type.sliding):
                     anim.SetInteger("state", 3);
-                    break;                
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (doorUsable)
+                    break;
+            }
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                rb.MovePosition(targetDoorPos);
+                if (doorUsable)
+                {
+                    rb.MovePosition(targetDoorPos);
+                }
+            }
+            if (rb.velocity.magnitude > 0.1f && !(isJumping) && !(cur_state == state_type.sliding))
+            {
+                cur_state = state_type.moving;
+            }
+            else if (rb.velocity.magnitude < 0.1f && !(isJumping) && !(cur_state == state_type.sliding))
+            {
+                cur_state = state_type.idle;
             }
         }
-        if (rb.velocity.magnitude > 0.1f && !(isJumping) && !(cur_state == state_type.sliding))
+        else // Need to stop physics too
         {
-            cur_state = state_type.moving;
-        }
-        else if(rb.velocity.magnitude < 0.1f && !(isJumping) && !(cur_state == state_type.sliding))
-        {
-            cur_state = state_type.idle;
+            Time.timeScale = 0.0f;
         }
     }
 
     void FixedUpdate()
     {
-        //rb.velocity = new Vector2(direction.x * speed, rb.velocity.y); // Sudo physics based controller
-        if (direction.magnitude > 0.0f) // physics based controller
+        if(isPaused != true)
         {
-            if (facingRight == true)
+            //rb.velocity = new Vector2(direction.x * speed, rb.velocity.y); // Sudo physics based controller
+            if (direction.magnitude > 0.0f) // physics based controller
             {
-                spr.flipX = false;
-                if(rb.velocity.x < maxSpeed) // Prevent player from going too fast
+                if (facingRight == true)
                 {
-                    rb.AddForce(Vector2.right * speed);
+                    spr.flipX = false;
+                    if (rb.velocity.x < maxSpeed) // Prevent player from going too fast
+                    {
+                        rb.AddForce(Vector2.right * speed);
+                    }
+                }
+                else
+                {
+                    spr.flipX = true;
+                    if (rb.velocity.x > -1 * maxSpeed) // Prevent player from going too fast
+                    {
+                        rb.AddForce(Vector2.left * speed);
+                    }
                 }
             }
-            else
+            if (startJump == true)
             {
-                spr.flipX = true;
-                if (rb.velocity.x > -1* maxSpeed) // Prevent player from going too fast
-                {
-                    rb.AddForce(Vector2.left * speed);
-                }
+                jump();
+                startJump = false;
             }
-        }
-        if (startJump == true)
-        {
-            jump();
-            startJump = false;
         }
     }
 
@@ -218,5 +230,11 @@ public class player_controller : MonoBehaviour
     void playGame()
     {
         isPaused = false;
+    }
+
+    void endOfLevel()
+    {
+        isPaused = true;
+        GameObject.Find("Player/UI/playerNameUI").SetActive(true);                
     }
 }

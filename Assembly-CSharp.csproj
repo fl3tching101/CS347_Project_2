@@ -62,25 +62,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\scoreController.cs" />
     <Compile Include="Assets\Scripts\camera_controller.cs" />
+    <Compile Include="Assets\Scripts\dataController.cs" />
     <Compile Include="Assets\Scripts\doorController.cs" />
+    <Compile Include="Assets\Scripts\endLevel.cs" />
     <Compile Include="Assets\Scripts\lava_controller.cs" />
     <Compile Include="Assets\Scripts\menuController.cs" />
     <Compile Include="Assets\Scripts\player_controller.cs" />
     <Compile Include="Assets\Scripts\quitGame.cs" />
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
+    <Compile Include="Assets\Scripts\scoreController.cs" />
+    <Compile Include="Assets\Scripts\submitPlayerName.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -90,11 +81,17 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
       <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
@@ -116,6 +113,12 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>C:/Users/jorda/Documents/GitHub/CS347_Project_2/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
