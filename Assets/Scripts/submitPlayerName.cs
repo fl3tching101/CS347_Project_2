@@ -20,10 +20,13 @@ public class submitPlayerName : MonoBehaviour
     public void submitName()
     {
         nameFromInput = nameInput.text;
-        scoreCont.SendMessage("setPlayerName", nameFromInput);
-        inputField.SetActive(false);
-        GameObject.Find("Player/UI/levelComplete").SetActive(true); // Display the level complete UI text 
-        int score = GameObject.Find("Player").GetComponent<scoreController>().calculateScore();
-        GameObject.Find("Player/UI/levelComplete/scoreText").GetComponent<Text>().text = "Your Score: " + score;
+        if (nameFromInput != "")
+        {
+            scoreCont.SendMessage("setPlayerName", nameFromInput);
+            inputField.SetActive(false);
+            GameObject.Find("Player/UI/levelComplete").SetActive(true); // Display the level complete UI text 
+            int score = GameObject.Find("Player").GetComponent<scoreController>().calculateScore();
+            GameObject.Find("Player/UI/levelComplete/scoreText").GetComponent<Text>().text = "Your Score: " + score;
+        }
     }
 }

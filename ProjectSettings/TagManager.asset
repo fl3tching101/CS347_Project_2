@@ -10,6 +10,7 @@ TagManager:
   - Door
   - Menu
   - levelComplete
+  - coin
   layers:
   - Default
   - TransparentFX
