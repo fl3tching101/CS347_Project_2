@@ -84,7 +84,8 @@ public class player_controller : MonoBehaviour
             {
                 if (doorUsable)
                 {
-                    rb.MovePosition(targetDoorPos);
+                    //rb.MovePosition(targetDoorPos);
+                    transform.SetPositionAndRotation(targetDoorPos, transform.rotation);
                 }
             }
             if (rb.velocity.magnitude > 0.1f && !(isJumping) && !(cur_state == state_type.sliding))
@@ -235,6 +236,6 @@ public class player_controller : MonoBehaviour
     void endOfLevel()
     {
         isPaused = true;
-        GameObject.Find("Player/UI/playerNameUI").SetActive(true);                
+        GameObject.Find("Player/UI/playerNameUI").SetActive(true);
     }
 }

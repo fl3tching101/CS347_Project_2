@@ -20,10 +20,10 @@ public class menuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            print("Hit escape");
+            //print("Hit escape");
             if(curPaused == false) // Currently running, pause game
             {
-                print("Paused");
+                //print("Paused");
                 player.SendMessage("pauseGame");
                 curPaused = true;
                 menu.SetActive(true);
