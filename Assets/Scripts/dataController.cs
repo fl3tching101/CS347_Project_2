@@ -8,17 +8,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class dataController : MonoBehaviour
 {
     public static dataController dataManagement;
-    public int[] highscores_tmp;
-    public string[] highscore_player_tmp;
+    public int[,] highscores_tmp;
+    public string[,] highscore_player_tmp;
     
 
     void Awake()
     {
-        if(dataManagement == null)
+        if (dataManagement == null)
         {
             DontDestroyOnLoad(gameObject);
             dataManagement = this;
-        }else if(dataManagement != this)
+        }
+        else if (dataManagement != this)
         {
             Destroy(gameObject);
         }
@@ -26,8 +27,8 @@ public class dataController : MonoBehaviour
 
     void Start()
     {
-        highscores_tmp = new int[10];
-        highscore_player_tmp = new string[10];
+        highscores_tmp = new int[10,3];
+        highscore_player_tmp = new string[10,3];
         //print(Application.persistentDataPath);
     }
 
@@ -63,6 +64,6 @@ public class dataController : MonoBehaviour
 [Serializable]
 class gameData
 {
-    public int[] highscores;
-    public string[] highscore_player;
+    public int[,] highscores;
+    public string[,] highscore_player;
 }

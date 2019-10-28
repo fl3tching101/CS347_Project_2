@@ -13,6 +13,7 @@ public class scoreController : MonoBehaviour
     public int baseScore; // Base score for level... kind of silly, but at least if they get no time bonus they don't get 0 score
     public string playerName; // The name of the player, found at the end of level
     private int coins_collected; // Number of coins collected
+    public int levelNum;
 
     void Start()
     {
@@ -75,20 +76,20 @@ public class scoreController : MonoBehaviour
         for (int i = 0; i < 10; i++){
             if (foundPlace) // Runs on loop after place is found
             { // Swaps the previous higher score with the next lower score, place 10 (or 9 since starts at 0) falls off list
-                curBest = dataController.dataManagement.highscores_tmp[i];
-                curPlayer = dataController.dataManagement.highscore_player_tmp[i];
-                dataController.dataManagement.highscores_tmp[i] = prevBest;
-                dataController.dataManagement.highscore_player_tmp[i] = prevPlayer;
+                curBest = dataController.dataManagement.highscores_tmp[i,levelNum];
+                curPlayer = dataController.dataManagement.highscore_player_tmp[i, levelNum];
+                dataController.dataManagement.highscores_tmp[i, levelNum] = prevBest;
+                dataController.dataManagement.highscore_player_tmp[i, levelNum] = prevPlayer;
                 prevBest = curBest;
                 prevPlayer = curPlayer;
             }
-            if (score >= dataController.dataManagement.highscores_tmp[i] && foundPlace == false) // Until we find the place for the current score, loop forever
+            if (score >= dataController.dataManagement.highscores_tmp[i, levelNum] && foundPlace == false) // Until we find the place for the current score, loop forever
             {
                 foundPlace = true;
-                prevBest = dataController.dataManagement.highscores_tmp[i];
-                prevPlayer = dataController.dataManagement.highscore_player_tmp[i];
-                dataController.dataManagement.highscores_tmp[i] = score;
-                dataController.dataManagement.highscore_player_tmp[i] = playerName;
+                prevBest = dataController.dataManagement.highscores_tmp[i, levelNum];
+                prevPlayer = dataController.dataManagement.highscore_player_tmp[i, levelNum];
+                dataController.dataManagement.highscores_tmp[i, levelNum] = score;
+                dataController.dataManagement.highscore_player_tmp[i, levelNum] = playerName;
             }            
         }
         //for (int i = 0; i < 10; i++)
@@ -97,44 +98,44 @@ public class scoreController : MonoBehaviour
         //    print("ScoreController Player for place " + i + " : " + dataController.dataManagement.highscore_player_tmp[i]);
         //}
         dataController.dataManagement.saveData(); // Save the data to disk
-        GameObject.Find("Player/UI/levelComplete/highscoreText").GetComponent<Text>().text = "Highscore: " + dataController.dataManagement.highscores_tmp[0];
+        GameObject.Find("Player/UI/levelComplete/highscoreText").GetComponent<Text>().text = "Highscore: " + dataController.dataManagement.highscores_tmp[0, levelNum];
         Text highscore_text = GameObject.Find("Player/UI/levelComplete/highscores").GetComponent<Text>();
-        highscore_text.text = "Highscores\n1: " + dataController.dataManagement.highscore_player_tmp[0] + " : " + dataController.dataManagement.highscores_tmp[0] + "\n";
-        if (dataController.dataManagement.highscore_player_tmp[1] != null)
+        highscore_text.text = "Highscores\n1: " + dataController.dataManagement.highscore_player_tmp[0, levelNum] + " : " + dataController.dataManagement.highscores_tmp[0, levelNum] + "\n";
+        if (dataController.dataManagement.highscore_player_tmp[1, levelNum] != null)
         {
-            highscore_text.text += "2: " + dataController.dataManagement.highscore_player_tmp[1] + " : " + dataController.dataManagement.highscores_tmp[1] + "\n";
+            highscore_text.text += "2: " + dataController.dataManagement.highscore_player_tmp[1, levelNum] + " : " + dataController.dataManagement.highscores_tmp[1, levelNum] + "\n";
         }
-        if (dataController.dataManagement.highscore_player_tmp[2] != null)
+        if (dataController.dataManagement.highscore_player_tmp[2, levelNum] != null)
         {
-            highscore_text.text += "3: " + dataController.dataManagement.highscore_player_tmp[2] + " : " + dataController.dataManagement.highscores_tmp[2] + "\n";
+            highscore_text.text += "3: " + dataController.dataManagement.highscore_player_tmp[2, levelNum] + " : " + dataController.dataManagement.highscores_tmp[2, levelNum] + "\n";
         }
-        if (dataController.dataManagement.highscore_player_tmp[3] != null)
+        if (dataController.dataManagement.highscore_player_tmp[3, levelNum] != null)
         {
-            highscore_text.text += "4: " + dataController.dataManagement.highscore_player_tmp[3] + " : " + dataController.dataManagement.highscores_tmp[3] + "\n";
+            highscore_text.text += "4: " + dataController.dataManagement.highscore_player_tmp[3, levelNum] + " : " + dataController.dataManagement.highscores_tmp[3, levelNum] + "\n";
         }
-        if (dataController.dataManagement.highscore_player_tmp[4] != null)
+        if (dataController.dataManagement.highscore_player_tmp[4, levelNum] != null)
         {
-            highscore_text.text += "5: " + dataController.dataManagement.highscore_player_tmp[4] + " : " + dataController.dataManagement.highscores_tmp[4] + "\n";
+            highscore_text.text += "5: " + dataController.dataManagement.highscore_player_tmp[4, levelNum] + " : " + dataController.dataManagement.highscores_tmp[4, levelNum] + "\n";
         }
-        if (dataController.dataManagement.highscore_player_tmp[5] != null)
+        if (dataController.dataManagement.highscore_player_tmp[5, levelNum] != null)
         {
-            highscore_text.text += "6: " + dataController.dataManagement.highscore_player_tmp[5] + " : " + dataController.dataManagement.highscores_tmp[5] + "\n";
+            highscore_text.text += "6: " + dataController.dataManagement.highscore_player_tmp[5, levelNum] + " : " + dataController.dataManagement.highscores_tmp[5, levelNum] + "\n";
         }
-        if (dataController.dataManagement.highscore_player_tmp[6] != null)
+        if (dataController.dataManagement.highscore_player_tmp[6, levelNum] != null)
         {
-            highscore_text.text += "7: " + dataController.dataManagement.highscore_player_tmp[6] + " : " + dataController.dataManagement.highscores_tmp[6] + "\n";
+            highscore_text.text += "7: " + dataController.dataManagement.highscore_player_tmp[6, levelNum] + " : " + dataController.dataManagement.highscores_tmp[6, levelNum] + "\n";
         }
-        if (dataController.dataManagement.highscore_player_tmp[7] != null)
+        if (dataController.dataManagement.highscore_player_tmp[7, levelNum] != null)
         {
-            highscore_text.text += "8: " + dataController.dataManagement.highscore_player_tmp[7] + " : " + dataController.dataManagement.highscores_tmp[7] + "\n";
+            highscore_text.text += "8: " + dataController.dataManagement.highscore_player_tmp[7, levelNum] + " : " + dataController.dataManagement.highscores_tmp[7, levelNum] + "\n";
         }
-        if (dataController.dataManagement.highscore_player_tmp[8] != null)
+        if (dataController.dataManagement.highscore_player_tmp[8, levelNum] != null)
         {
-            highscore_text.text += "9: " + dataController.dataManagement.highscore_player_tmp[8] + " : " + dataController.dataManagement.highscores_tmp[8] + "\n";
+            highscore_text.text += "9: " + dataController.dataManagement.highscore_player_tmp[8, levelNum] + " : " + dataController.dataManagement.highscores_tmp[8, levelNum] + "\n";
         }
-        if (dataController.dataManagement.highscore_player_tmp[9] != null)
+        if (dataController.dataManagement.highscore_player_tmp[9, levelNum] != null)
         {
-            highscore_text.text += "10: " + dataController.dataManagement.highscore_player_tmp[9] + " : " + dataController.dataManagement.highscores_tmp[9] + "\n";
+            highscore_text.text += "10: " + dataController.dataManagement.highscore_player_tmp[9, levelNum] + " : " + dataController.dataManagement.highscores_tmp[9, levelNum] + "\n";
         }
 
     }

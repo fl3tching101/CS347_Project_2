@@ -11,7 +11,8 @@ public class doorController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        pos = targetDoor.transform.position;
+        pos = targetDoor.transform.position;        
+        //print(this.name + " pos = " + pos);
     }
 
     void Update()
