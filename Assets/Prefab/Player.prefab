@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c25f4332145c64ba246324434a17de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Level 1
+  nextScene: Level 2
 --- !u!1 &479626554
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,8 +655,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 23.51}
-  m_SizeDelta: {x: 328, y: 68.48}
+  m_AnchoredPosition: {x: 0, y: -4.63}
+  m_SizeDelta: {x: 597.58, y: 124.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &479626557
 CanvasRenderer:
@@ -686,11 +686,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 36
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 53
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1037,11 +1037,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 53
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1114,12 +1114,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MinSize: 3
+    m_MaxSize: 300
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
@@ -1976,8 +1976,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 84.000015, y: -25.729996}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 153.04, y: -105.40999}
+  m_SizeDelta: {x: 291.5, y: 76.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1718273652
 CanvasRenderer:
@@ -2067,7 +2067,18 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1881580683}
+        m_MethodName: submitName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2411,8 +2422,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -84, y: -25.73}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -153.04, y: -105.409996}
+  m_SizeDelta: {x: 291.5, y: 76.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1881580686
 CanvasRenderer:
@@ -2581,10 +2592,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 38
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2609,6 +2620,7 @@ GameObject:
   - component: {fileID: 509988260}
   - component: {fileID: 509988255}
   - component: {fileID: 509988256}
+  - component: {fileID: 1544330544}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2745,7 +2757,7 @@ MonoBehaviour:
   speed: 30
   health: 6
   isJumping: 0
-  jumpForce: 1000
+  jumpForce: 800
   numJumps: 2
   maxSpeed: 7
   health_image_1: {fileID: 3150589893816930102}
@@ -2754,6 +2766,7 @@ MonoBehaviour:
   emptyHealth: {fileID: 21300000, guid: 53cdeb43819122f42b7e0f791a8619b7, type: 3}
   halfHealth: {fileID: 21300000, guid: 2315afc679bd4ad49bee02d35a0da685, type: 3}
   fullHealth: {fileID: 21300000, guid: d259a6b3cbf3ff6459ffbe28362ef3e3, type: 3}
+  deathSound: {fileID: 8300000, guid: 9837d5bf49c2137469bf5dca9472a6b6, type: 3}
 --- !u!95 &509988260
 Animator:
   serializedVersion: 3
@@ -2803,6 +2816,105 @@ MonoBehaviour:
   failTime: 120
   baseScore: 280
   playerName: 
+  levelNum: 0
+  coinTink: {fileID: 1544330544}
+  coinSound: {fileID: 8300000, guid: 48a8e38ea504e2f4caa400302ae5fd4a, type: 3}
+--- !u!82 &1544330544
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150589892353680425}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3150589892467683477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3149,9 +3261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca52dacaf98960849b6799036dbb57a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -16
-  xMax: 3.2
-  yMin: -9
+  xMin: -30
+  xMax: 3
+  yMin: -6.5
   yMax: 20
 --- !u!1 &3150589893816930104
 GameObject:

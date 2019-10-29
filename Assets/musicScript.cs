@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class musicScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static musicScript musicData;
+    void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (musicData == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            musicData = this;
+        }
+        else if (musicData != this)
+        {
+            Destroy(gameObject);
+        }
     }
 }
