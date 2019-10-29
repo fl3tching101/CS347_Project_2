@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\musicScript.cs" />
     <Compile Include="Assets\Scripts\camera_controller.cs" />
     <Compile Include="Assets\Scripts\dataController.cs" />
     <Compile Include="Assets\Scripts\doorController.cs" />
