@@ -6,6 +6,6 @@ public class quitGame : MonoBehaviour
 {
     public void doExitGame()
     {
-        Application.Quit();
+        Application.Quit(); // Close the game... forget this one and you'll regret it in full screen
     }
 }

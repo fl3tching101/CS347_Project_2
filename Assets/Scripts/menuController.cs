@@ -12,7 +12,7 @@ public class menuController : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player"); // Find the player
         curPaused = false;
     }
 
@@ -24,16 +24,16 @@ public class menuController : MonoBehaviour
             if(curPaused == false) // Currently running, pause game
             {
                 //print("Paused");
-                player.SendMessage("pauseGame");
-                curPaused = true;
-                menu.SetActive(true);
+                player.SendMessage("pauseGame"); // Let the player know to pause all of his actions
+                curPaused = true; // Bool for the if statements
+                menu.SetActive(true); // Make the menu active
             }
             else // Currently paused, resume
             {
-                print("Play");
-                player.SendMessage("playGame");
+                //print("Play");
+                player.SendMessage("playGame"); // Let the player know to start playing again
                 curPaused = false;
-                menu.SetActive(false);
+                menu.SetActive(false); // Hide menu
             }
         }
     }

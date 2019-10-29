@@ -22,11 +22,11 @@ public class lava_controller : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(playerInLava == true)
+        if(playerInLava == true) // If player is in the lava
         {
             if (currentCountdown > 0)
             {
-                currentCountdown--;
+                currentCountdown--; // Countdown so that it hurts them in cycles
             }
             else
             {
@@ -39,7 +39,7 @@ public class lava_controller : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player") // Detect player in lava
         {
-            playerInLava = true;
+            playerInLava = true; // Set the bool so the rest of the code knows the secret
         }
     }
 
@@ -54,6 +54,6 @@ public class lava_controller : MonoBehaviour
 
     void damagePlayer()
     {
-        player.SendMessage("applyDamage", damageLevel);
+        player.SendMessage("applyDamage", damageLevel); // Let the player know the lava wants them to die a bit more
     }
 }

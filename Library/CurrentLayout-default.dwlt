@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 31
+  controlID: 128
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,20 +337,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Seth\Documents\CS 347 Game Design\Project 2\Unity Project\CS347_Project_2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c8380000
-    m_LastClickedID: 14536
-    m_ExpandedIDs: 00000000262f000024300000c83800009e390000f23a0000ea41000000ca9a3b
+    m_SelectedIDs: dc410000
+    m_LastClickedID: 16860
+    m_ExpandedIDs: 00000000182f000016300000ba38000090390000e43a0000dc41000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -378,7 +378,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000262f000024300000c83800009e390000f23a0000ea410000
+    m_ExpandedIDs: 00000000182f000016300000ba38000090390000e43a0000dc410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -501,9 +501,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9c3a0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8ac0ffff2edbffff54dbffffe4dbffff16ddffff62e3ffff4ee6ffffd8ecffffeef0ffffe0f6ffff62fbffff
+      m_ExpandedIDs: 72b6ffff9eb6ffff44bbfffff2c0fffffec0ffff12c2ffff3ec2ffffe4c6ffff92ccffff9eccffff7ccdffffa8cdffff4ed2fffffcd7ffff08d8ffff8cdaffffbadaffff68dfffff1ae5ffff2ae5ffff6ce8ffff3ceeffff4ef2ffff40f5ffff6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

@@ -10,17 +10,15 @@ public class camera_controller : MonoBehaviour
     public float yMin;
     public float yMax;
 
-    // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player"); // Find player
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
-        float x = Mathf.Clamp(player.transform.position.x, xMin, xMax);
-        float y = Mathf.Clamp(player.transform.position.y, yMin, yMax);
-        gameObject.transform.position = new Vector3(x, y, gameObject.transform.position.z);
+        float x = Mathf.Clamp(player.transform.position.x, xMin, xMax); // Set the maximum and minimum x values of the camera
+        float y = Mathf.Clamp(player.transform.position.y, yMin, yMax); // Set the maximum and minimum y values of the camera
+        gameObject.transform.position = new Vector3(x, y, gameObject.transform.position.z); // Move the camera to the new location
     }
 }

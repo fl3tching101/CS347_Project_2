@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class nextLevelButtonController : MonoBehaviour
 {
-    public string nextScene;
+    public string nextScene; // Which scene to go to
 
     public void moveNextLevel()
     {
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(nextScene); // Go to that scene
     }
 }
