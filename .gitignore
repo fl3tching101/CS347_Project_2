@@ -89,3 +89,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+Library/CurrentLayout-default.dwlt
+Library/expandedItems
+Library/SceneVisibilityState.asset
