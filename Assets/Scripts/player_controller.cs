@@ -25,6 +25,8 @@ public class player_controller : MonoBehaviour
     private Vector3 targetDoorPos; // Position of the targeted door
     private bool isPaused; // Used to pause the game
     private Text scoreText; // Text that the final score is saved into
+    private AudioSource deathSource; // Source for death noise
+    public AudioClip deathSound; // Sound effect for dying
 
     private enum state_type {idle, moving, jumping, sliding}
     state_type cur_state;
@@ -41,6 +43,7 @@ public class player_controller : MonoBehaviour
         doorUsable = false;
         targetDoorPos = Vector3.zero;
         isPaused = false;
+        deathSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -166,9 +169,10 @@ public class player_controller : MonoBehaviour
             case 1:
                 health_image_1.sprite = halfHealth;
                 break;
-            case 0:
+            case 0: // Ded - D E D ded
                 health_image_1.sprite = emptyHealth;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                StartCoroutine(playDeathSound());
+                //deathSource.PlayOneShot(deathSound);                
                 break;
 
         }
@@ -237,5 +241,12 @@ public class player_controller : MonoBehaviour
     {
         isPaused = true;
         GameObject.Find("Player/UI/playerNameUI").SetActive(true);
+    }
+
+    IEnumerator playDeathSound()
+    {        
+        deathSource.PlayOneShot(deathSound);
+        yield return new WaitWhile(()=> deathSource.isPlaying);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

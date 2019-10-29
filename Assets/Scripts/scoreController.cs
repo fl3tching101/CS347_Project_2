@@ -14,6 +14,8 @@ public class scoreController : MonoBehaviour
     public string playerName; // The name of the player, found at the end of level
     private int coins_collected; // Number of coins collected
     public int levelNum;
+    public AudioSource coinTink; // Source for the coin tink when picking up coins
+    public AudioClip coinSound; // Actual audio
 
     void Start()
     {
@@ -150,6 +152,7 @@ public class scoreController : MonoBehaviour
         if(collision.tag == "coin")
         {
             coins_collected++;
+            coinTink.PlayOneShot(coinSound);
             Destroy(collision.gameObject);
         }
     }
